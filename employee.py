@@ -65,7 +65,7 @@ class Employee:
         
         if (self.commission != None):
             if (self.commission.get_commissionType() == CommissionType.Contract):
-                commissionStr = f" and receives a commission for {self.commission.get_contracts()} contracts at {self.commission.get_amount()}/contract"
+                commissionStr = f" and receives a commission for {self.commission.get_contracts()} contract(s) at {self.commission.get_amount()}/contract"
             else:
                 commissionStr = f" and receives a bonus commission of {self.commission.get_amount()}"
 
@@ -98,9 +98,6 @@ jan.set_hoursWorked(150)
 # Robbie works on a monthly salary of 2000 and receives a bonus commission of 1500.  Their total pay is 3500.
 robbieCommission = Commission(CommissionType.Bonus, 1500)
 robbie = Employee('Robbie', ContractType.Monthly, 2000, robbieCommission)
-print("Robbie: " + str(robbie.get_pay()))
-print("Robbie: " + robbie.__str__())
-print()
 
 # Ariel works on a contract of 120 hours at 30/hour and receives a bonus commission of 600.  Their total pay is 4200.
 arielCommission = Commission(CommissionType.Bonus, 600)
